@@ -1,9 +1,46 @@
 {{ define "main" }}
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+  <article style="display: flex; justify-content: space-between; align-items: center" class="cf ph3 ph5-l pv3 pv4-l f4  lh-copy mid-gray">
+{{ $icon_size := "64px" }}
+{{ with .Site.Params.resume }}
+<div>
+<a href="{{ . }}">Resume</a>
+</div>
+{{ end }}
+{{ with .Site.Params.github }}
+<div>
+  <a href="{{ . }}" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+    {{ partial "svg/github.svg" (dict "size" $icon_size) }}
+  </a>
+</div>
+{{ end }}
+{{ with .Site.Params.hireme}}
+<div><a href="{{ . }}">Hire Me</a>
+</div>
+{{ end }}
+</article>
+  <article style="display: flex" class="cf ph3 ph5-l pv3 pv4-l f4  lh-copy mid-gray">
+    <!--<div class="fl tc">
     {{ .Content }}
+    </div>
+    <div class="fl tc">
+    {{ .Content }}
+    </div> -->
+  <div class="fl w-100 w-50-ns bg-near-white" style="padding: 20px">
+    <h2>About Me</h2>
+    {{ .Content }}
+  </div>
+  <div class="fl w-100 w-50-ns bg-light-gray" style="padding: 20px">
+    <h2>Assorted Projects</h2>
+    {{ $projectSection := .Site.Params.projectSection | default "projects" }}
+    {{ $section := where .Site.RegularPages "Section" $projectSection }}
+    {{ $n_projects := $.Param "projects_number" | default 3 }}
+    {{ range (first $n_projects $section) }}
+	{{ .Content }}
+    {{ end}}
+  </div>
   </article>
   {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
-  {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
+  {{ $mainSections := (slice "posts") }}
   {{/* Create a variable with that section to use in multiple places. */}}
   {{ $section := where .Site.RegularPages "Section" "in" $mainSections }}
   {{/* Check to see if the section is defined for ranging through it */}}
