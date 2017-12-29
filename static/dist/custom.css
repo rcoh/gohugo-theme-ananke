@@ -1,0 +1,22 @@
+@media all and (max-width: 600px) {
+  .project-description {
+    display: none;
+  }
+  
+  .project-box {
+     width: 100%
+  }
+}
+
+@media all and (min-width: 601px) {
+  .project-description {}
+  .project-box {
+    width: 580px;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .head-image {
+    height: 400px;
+  }
+}
