@@ -24,19 +24,21 @@
     {{ .Content }}
   </div>
   <div class="fl project-box bg-light-gray" style="padding: 20px">
-    <h3>Assorted Projects</h3>
+    <h3>Recent Projects</h3>
     {{ $projectSection := .Site.Params.projectSection | default "projects" }}
     {{ $project_section := where .Site.RegularPages "Section" $projectSection }}
     {{ $n_projects := $.Param "projects_number" | default 3 }}
     {{ range (first $n_projects $project_section) }}
 	<div style="display: flex; align-items: center">
+        {{ with .Params.gh_url }}
          <div>
-	<a href="{{ .Params.gh_url }}" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+	<a href="{{ . }}" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
 	  {{ partial "svg/github.svg" (dict "size" 24) }}
 	</a>
         </div>
+        {{ end }}
 <div>
-	<a href="{{ .URL }}">{{ .Params.title }}</a><span class="project-description">: {{ .Params.short }} </span>
+	<a href="{{ .URL }}">{{ .Params.title }}</a><span class="project-description">: {{ .Params.short | markdownify }} </span>
 </div>
         </div>
     {{ end}}
