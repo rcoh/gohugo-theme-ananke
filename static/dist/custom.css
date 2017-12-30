@@ -20,3 +20,21 @@
     height: 400px;
   }
 }
+
+.centered-img img {
+   max-width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+}
+
+pre code {
+  line-height: 1.5;
+  background-color: black;
+}
+
+code {
+  background-color: #dadada;
+  border-radius: 2px;
+  padding: 1px;
+}
