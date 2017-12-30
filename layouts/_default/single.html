@@ -1,7 +1,7 @@
 {{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
 {{ define "main" }}
-  <div class="flex-l mt2 mw8 center">
-    <article class="center cf pv5 ph3 ph4-ns mw7">
+  <div class="flex-l mt2 center">
+    <article class="center cf pv5 ph3 ph4-ns mw9">
       <header>
         <p class="f6 b helvetica tracked">
           {{ humanize .Section | upper  }}
@@ -10,10 +10,31 @@
           {{ .Title }}
         </h1>
       </header>
-      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
-        {{ .Content }}
+      <div class="stats">
+        <dl class="dib mr5">
+          <dd  class="f6 f5-ns b ml0">Square Footage</dd>
+          <dd class="f3 f2-ns b ml0">{{ .Params.sq_foot }}</dd>
+        </dl>
+        {{range $key, $value := .Params.custom_stats}}
+        <dl class="dib mr5">
+          <dd class="f6 f5-ns b ml0">{{ $key }}</dd>
+          <dd class="f3 f2-ns b ml0">{{ $value }}</dd>
+        </dl>
+        {{ end }}
       </div>
+      <div class="property-container">
+        <div class="property-main">
+          {{ .Content }}
+        </div>
+        {{ with .Params.image }}
+        <div class="property-sidebar">
+          <img src="{{ . }}"/>
+        </div>
+        {{ end }}
+      </div>
+      {{ partial "contact.html" . }}
     </article>
+
     <aside class="ph3 mt2 mt6-ns">
       {{ partial "menu-contextual.html" . }}
     </aside>
