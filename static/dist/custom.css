@@ -1,0 +1,23 @@
+.property-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.property-main {
+
+}
+
+.property-sidebar {
+  flex: 0 0 auto;
+  max-width: 400px;
+}
+
+.property-image {
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 1px;
+  border-color: #44444491;
+  padding: 10px;
+}

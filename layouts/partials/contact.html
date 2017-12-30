@@ -1,0 +1,8 @@
+<div>
+  {{ with .Site.Params.email }}
+    <a href="mailto:{{ . }}">{{ . }}</a>
+  {{ end }}
+  {{ with .Site.Params.phone }}
+    <a href="tel: {{ . }}">{{ . }}</a>
+  {{ end }}
+</div>
