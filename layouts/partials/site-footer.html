@@ -3,6 +3,9 @@
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="{{ .Site.BaseURL }}" >
     &copy; {{ now.Format "2006" }} {{ .Site.Title }}
   </a>
+  {{ with .Site.Params.Source }}
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="{{ . }}">Source</a>
+  {{ end }}
   {{ partial "social-follow.html" . }}
   </div>
 </footer>
