@@ -6,6 +6,9 @@
         <p class="f6 b helvetica tracked">
           {{ humanize .Section | upper  }}
         </p>
+        <time class="f6 mv4 dib tracked" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          {{ .Date.Format "January 2, 2006" }}
+        </time>
         <h1 class="f1">
           {{ .Title }}
         </h1>
@@ -15,6 +18,10 @@
       </div>
     </article>
     <aside class="ph3 mt2 mt6-ns">
+      {{ partial "tags.html" . }}
+      <div class="bg-light-gray sidebar-separator">
+        <hr class="mw3 bb bw1 b--black-60">
+      </div>
       {{ partial "menu-contextual.html" . }}
     </aside>
   </div>

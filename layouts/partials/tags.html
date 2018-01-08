@@ -3,17 +3,17 @@
   {{ $name := index .Params.tags 0 }}
   {{ $name := $name | urlize }}
   {{ $tags := index .Site.Taxonomies.tags $name }}
-  {{ $i := $tags | len }}
-  {{ if ge $i 2 }}
-    <div class="mt5 f6 gray nested-lh-copy bg-light-gray ph3 pv2 measure-wide-l">
-      <ul class="list dib ml0 pl0">
-        <li class="black dib mb2 mr2">
-          Related:
+  {{ $i := sub ($tags | len) 1 }}
+  {{ if ge $i 0 }}
+    <div class="bg-light-gray pa3">
+      <ul>
+        <li class="list b mb3">
+          {{ $i }} Related {{ if ge $i 2 }}{{ .Section | humanize | pluralize }}{{ else }}{{ .Section | humanize | singularize }}{{end}}
         </li>
         {{ range $tags.Pages }}
           {{ if ne .URL $currentPageUrl }}
-            <li class="mb2 mr3">
-              <a href="{{ .URL }}" class="link mid-gray dim">
+            <li class="list f5 w-100 hover-bg-white nl1">
+              <a href="{{ .URL }}" class="link ph2 pv2 db black{{ if eq $currentPageUrl .URL }} o-50{{end}}">
                  {{ .LinkTitle }}
               </a>
             </li>
