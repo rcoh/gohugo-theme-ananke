@@ -1,6 +1,6 @@
 {{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
 {{ define "main" }}
-  <div class="flex-l mt2 mw8 center">
+  <div class="flex-l mt2 blog-content center">
     <article class="center cf pv5 ph3 ph4-ns mw7">
       <header>
         <p class="f6 b helvetica tracked">
@@ -17,9 +17,9 @@
         {{ .Content }}
       </div>
     </article>
-    <aside class="ph3 mt2 mt6-ns">
+    <aside class="ph3 mt2 mt6-ns bg-light-gray pv3 sidebar">
       {{ partial "tags.html" . }}
-      <div class="bg-light-gray sidebar-separator">
+      <div class="bg-light-gray pv3">
         <hr class="mw3 bb bw1 b--black-60">
       </div>
       {{ partial "menu-contextual.html" . }}

@@ -21,9 +21,14 @@
   }
 }
 
-.sidebar-separator {
-  margin-top: -8px;
-  margin-bottom: -8px;
+.sidebar {
+  position: sticky;
+  top: 20px;
+  height: min-content;
+}
+
+.blog-content {
+  max-width: 72rem;
 }
 
 .centered-img img {
