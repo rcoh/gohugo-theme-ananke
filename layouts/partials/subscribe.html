@@ -4,7 +4,9 @@
         <img src="/images/rss.png" />
     </a>
 </div>
+{{ with .Site.Params.subscribe_url }}
 <div>
-    <a href="http://eepurl.com/dhk7F1">Get Emailed about New Posts</a>
+    <a href="{{ . }}">Get Emailed about New Posts</a>
 </div>
+{{ end }}
 </div>
