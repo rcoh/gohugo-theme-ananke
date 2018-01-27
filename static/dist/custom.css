@@ -60,3 +60,7 @@ code {
 .footer a {
   padding-top: 0rem;
 }
+
+hr {
+  width: 80%;
+}
