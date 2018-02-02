@@ -64,3 +64,11 @@ code {
 hr {
   width: 80%;
 }
+
+/* Configure mathjax to work with hugo*/
+/* https://gohugo.io/content-management/formats/#mathjax-with-hugo */
+.has-jax {
+  
+  background-color: transparent;
+  /*color: #d11111;*/
+}
