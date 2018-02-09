@@ -52,3 +52,23 @@ code {
   border-radius: 2px;
   padding: 1px;
 }
+
+.brave img {
+  border-radius: 5px;
+}
+
+.footer a {
+  padding-top: 0rem;
+}
+
+hr {
+  width: 80%;
+}
+
+/* Configure mathjax to work with hugo*/
+/* https://gohugo.io/content-management/formats/#mathjax-with-hugo */
+.has-jax {
+  
+  background-color: transparent;
+  /*color: #d11111;*/
+}

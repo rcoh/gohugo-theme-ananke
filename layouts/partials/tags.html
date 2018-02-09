@@ -1,6 +1,6 @@
   {{ $allTags := .Site.Taxonomies.tags}}
 
-<div class="flex" style="justify-content: space-evenly">
+<div class="flex" style="justify-content: space-evenly; flex-wrap: wrap">
   {{ $currentPageUrl := .URL }}
   {{ range .Params.tags }}
     {{ $matches := index $.Site.Taxonomies.tags . }}

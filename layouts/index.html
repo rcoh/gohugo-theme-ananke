@@ -3,18 +3,18 @@
 {{ $icon_size := "64px" }}
 {{ with .Site.Params.resume }}
 <div>
-<a href="{{ . }}">Resume</a>
+<a href="{{ . }}" onclick="trackOutboundLink('resume-homepage')">Resume</a>
 </div>
 {{ end }}
 {{ with .Site.Params.github }}
 <div>
-  <a href="{{ . }}" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+  <a href="{{ . }}" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link" onclick="trackOutboundLink('github-homepage')">
     {{ partial "svg/github.svg" (dict "size" $icon_size) }}
   </a>
 </div>
 {{ end }}
 {{ with .Site.Params.hireme}}
-<div><a href="{{ . }}">Hire Me</a>
+<div><a href="{{ . }}" onclick="trackOutboundLink('hireme-homepage')">Hire Me</a>
 </div>
 {{ end }}
 </article>
@@ -32,7 +32,8 @@
 	<div style="display: flex; align-items: center">
         {{ with .Params.gh_url }}
          <div>
-	<a href="{{ . }}" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+  <a href="{{ . }}" class="link-transition github link dib z-999 pt3 pt0-l mr2" 
+  title="Github link" onclick="trackOutboundLink('gh-project {{ . }}')">
 	  {{ partial "svg/github.svg" (dict "size" 24) }}
 	</a>
         </div>
