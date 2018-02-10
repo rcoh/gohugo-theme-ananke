@@ -38,6 +38,13 @@
    display: block;
 }
 
+.signup-form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
 .blog-font {
   font-size: 1.1rem;
 }
@@ -68,7 +75,7 @@ hr {
 /* Configure mathjax to work with hugo*/
 /* https://gohugo.io/content-management/formats/#mathjax-with-hugo */
 .has-jax {
-  
+
   background-color: transparent;
   /*color: #d11111;*/
 }

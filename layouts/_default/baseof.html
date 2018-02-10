@@ -49,11 +49,21 @@
              'hitCallback': function(){document.location = url;}
            });
         }
+
+        var trackSubscribe = function() {
+          ga('send', 'event', 'engage', 'subscribe', 'todo', {
+            'transport': 'beacon',
+            'hitCallback': function(){document.location = url;}
+          });
+        }
       </script>
     {{ else }}
       <script>
         var trackOutboundLink = function(url) {
           console.log("recorded", url);
+        }
+        var trackSubscribe = function() {
+          console.log("subscribed");
         }
       </script>
     {{ end }}
