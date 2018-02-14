@@ -14,7 +14,7 @@
   {{ $name := $name | urlize }}
   {{ $tags := index .Site.Taxonomies.tags $name }}
   {{ $i := sub ($related_urls | len) 1 }}
-  {{ if ge $i 0 }}
+  {{ if gt $i 0 }}
     <div>
       <ul>
         <li class="list b mb3">

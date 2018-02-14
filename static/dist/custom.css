@@ -49,6 +49,10 @@
   font-size: 1.1rem;
 }
 
+.blog-font-prose {
+  font-size: 1.3rem;
+}
+
 pre code {
   line-height: 1.5;
   background-color: black;
