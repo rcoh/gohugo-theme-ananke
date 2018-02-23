@@ -28,7 +28,7 @@
     {{ $projectSection := .Site.Params.projectSection | default "projects" }}
     {{ $project_section := where .Site.RegularPages "Section" $projectSection }}
     {{ $n_projects := $.Param "projects_number" | default 3 }}
-    {{ range (first $n_projects $project_section) }}
+    {{ range where $project_section "Params.showcase" true }}
 	<div style="display: flex; align-items: center">
         {{ with .Params.gh_url }}
          <div>
