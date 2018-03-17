@@ -12,6 +12,7 @@
       </a>
     </div>
   </div>
+  {{ if .Params.enableMath }}
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   </script>
   <script type="text/x-mathjax-config">
@@ -26,20 +27,21 @@
              extensions: ["AMSmath.js", "AMSsymbols.js"] }
       }
     });
-    </script>
-    <script>
-      let updateJax = function() {
-        // Fix <code> tags after MathJax finishes running. This is a
-        // hack to overcome a shortcoming of Markdown. Discussion at
-        // https://github.com/mojombo/jekyll/issues/199
-        var all = MathJax.Hub.getAllJax();
-        for (i = 0; i < all.length; i++) {
-          all[i].SourceElement().parentNode.className += ' has-jax'; 
-        }
+  </script>
+  <script>
+    let updateJax = function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for (i = 0; i < all.length; i++) {
+        all[i].SourceElement().parentNode.className += ' has-jax'; 
       }
-    </script>
-    
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(updateJax);
-    </script>
+    }
+  </script>
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(updateJax);
+  </script>
+  {{ end }}
 </footer>
