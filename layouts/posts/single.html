@@ -15,6 +15,14 @@
         </h1>
       </header>
       <div class="nested-copy-line-height lh-copy {{ if .Params.prose }} blog-font-prose {{ else }} blog-font {{ end }} nested-links centered-img mid-gray">
+        {{ with .Params.translations }}
+          <div class="f6 dib tracked">
+          Thanks to random internet strangers, you can also read this post in:
+          {{ range $lang, $link := .}}
+            <a href={{ $link }}>{{ $lang | humanize }}</a>
+          {{ end }}
+          </div>
+        {{ end }}
         {{ .Content }}
       </div>
     </article>
